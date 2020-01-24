@@ -1,0 +1,30 @@
+version: '3'
+services:
+    mysql:
+        image: mysql:8.0.19
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: "MySQLRootPassw0rd123"
+        volumes:
+            #path to database
+            - ./mysqldb:/var/lib/mysql
+        networks:
+            - webnet-dev
+    php-fpm:
+        build: ./dockerfiles/php-fpm
+        volumes:
+            - ./:/code
+            - ./temp:/tmp
+        networks:
+            - webnet-dev
+    nginx:
+        image: nginx:1.17.7-alpine
+        networks:
+            - webnet-dev
+        ports: 
+            - "8888:80"
+        volumes:
+            - ./:/code
+            - ./nginx_datastore/simple-web-app.conf:/etc/nginx/conf.d/simple-web-app.conf
+networks:
+    webnet-dev:
