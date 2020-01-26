@@ -1,0 +1,9 @@
+{
+    "name": "simple-web-application",
+    "description": "grid customer department",
+    "autoload": {
+        "psr-4": {
+            "SimpleApplication\\Grid\\": ["application/"]
+        }
+    }
+}
