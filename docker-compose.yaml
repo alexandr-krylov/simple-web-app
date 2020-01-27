@@ -16,11 +16,11 @@ services:
             - ./application:/code
             - ./temp:/tmp
 #            - ./dockerfiles/php-fpm/entrypoint.sh:/code/entrypoint.sh
-#        entrypoint: /code/entrypoint.sh
+        entrypoint: /code/entrypoint.sh
         networks:
             - webnet-dev
     nginx:
-        image: nginx:1.17.7-alpine
+        image: nginx:1.17.8-alpine
 #        build: ./dockerfiles/nginx
         networks:
             - webnet-dev
@@ -28,6 +28,6 @@ services:
             - "8888:80"
         volumes:
             - ./application:/code
-            - ./nginx_datastore/test.conf:/etc/nginx/conf.d/test.conf
+            - ./application/test.conf:/etc/nginx/conf.d/test.conf
 networks:
     webnet-dev:

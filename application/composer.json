@@ -1,5 +1,5 @@
 {
-    "name": "simple-web-application",
+    "name": "alexandr-krylov/simple-web-application",
     "description": "grid customer department",
     "autoload": {
         "psr-4": {
