@@ -5,5 +5,9 @@
         "psr-4": {
             "SimpleApplication\\Grid\\": ["application/"]
         }
+    },
+    "require": {
+        "twbs/bootstrap": "4.4.1",
+        "laravel/laravel": "6"
     }
 }
