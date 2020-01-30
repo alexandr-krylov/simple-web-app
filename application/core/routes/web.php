@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('grid', ['activeGrid' => 'active']);
 });
 Route::get('/employee', function () {
-    return view('employee');
+    return view('employee', ['activeEmployee' => 'active']);
 });
 Route::get('/department', function () {
-    echo 'department';
+    return view('department', ['activeDepartment' => 'active']);
 });
