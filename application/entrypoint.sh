@@ -13,5 +13,6 @@ cd /code
 cp core/routes/web.php laravel/routes/
 mkdir -p laravel/resources/views/layouts
 cp -R core/resources/views/* laravel/resources/views/
+cp -R core/app/Http/Controllers/* laravel/app/Http/Controllers/
 
 php-fpm

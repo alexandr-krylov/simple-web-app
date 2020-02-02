@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleApplication\Grid\Core\Entity;
+namespace App\Core\Entity;
 
 abstract class AbstractEntity
 {
