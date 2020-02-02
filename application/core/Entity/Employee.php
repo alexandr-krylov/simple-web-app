@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleApplication\Grid\Core\Entity;
+namespace Core\Entity;
 
 class Employee extends AbstractEntity
 {
