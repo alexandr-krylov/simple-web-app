@@ -6,9 +6,16 @@ use App\Http\Controllers\Controller;
 use Core\Entity\Employee;
 class GridController extends Controller
 {
+    private $employeeRepository;
+
+    public function __construct(ElployeeRepository $repository)
+    {
+        $this->employeeRepository = $repository;
+    }
+
     public function show()
     {
-        $employee = new Employee();
-        var_dump($employee);
+        $employees = $this->employeeRepository->getAll();
+        return view('grid', ['employees' => $employees]);
     }
 }

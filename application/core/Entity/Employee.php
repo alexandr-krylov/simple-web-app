@@ -9,6 +9,6 @@ class Employee extends AbstractEntity
     protected $patronymic;
     protected $gender;
     protected $salary;
-
+    protected $departments = [];
     
 }

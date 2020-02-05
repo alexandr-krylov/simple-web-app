@@ -9,7 +9,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="/css/app.css">
 
-        <title>App Name - @yield('title')</title>
+        <title>Simple web application - @yield('title')</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,10 +36,6 @@
             </div>
         </nav>
     <h1>@yield('h1')</h1>
-    @section('sidebar')
-        This is the master sidebar.
-    @show
-
     <div class="container">
         @yield('content')
     </div>
