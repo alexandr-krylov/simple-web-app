@@ -17,5 +17,6 @@ cp -R core/app/Http/Controllers/* laravel/app/Http/Controllers/
 mkdir -p laravel/core
 cp -R core/Entity laravel/core/
 cp -R core/Service laravel/core/
+cp -R core/Repository laravel/core/
 
 php-fpm
