@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Core\Entity\Employee;
-use Core\Repository\EmployeeRepository;
+use Core\Repository\EmployeeRepositoryInterface;
 
 class GridController extends Controller
 {
     private $employeeRepository;
 
-    public function __construct(ElployeeRepository $repository)
+    public function __construct(EmployeeRepositoryInterface $repository)
     {
         $this->employeeRepository = $repository;
     }
 
     public function show()
     {
-        $employees = $this->employeeRepository->getAll();
+        $employees = $this->employeeRepository->all();
         return view('grid', ['employees' => $employees]);
     }
 }

@@ -16,7 +16,7 @@ services:
             - ./application:/code
             - ./temp:/tmp
 #            - ./dockerfiles/php-fpm/entrypoint.sh:/code/entrypoint.sh
-        entrypoint: /code/entrypoint.sh
+#        entrypoint: /code/entrypoint.sh
         networks:
             - webnet-dev
     nginx:

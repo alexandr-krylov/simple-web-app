@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Core\Persistence\Laravel\EmployeeRepository;
+use Core\Repository\EmployeeRepositoryInterface;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,13 +16,11 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            EmployeeRepository::class,
+            EmployeeRepositoryInterface::class,
             function ($app) {
-            return new CustomerRepository(
-            $app['Doctrine\ORM\EntityManagerInterface']
-            );
+                return new EmployeeRepository();
             }
-            );
+        );
     }
 
     /**

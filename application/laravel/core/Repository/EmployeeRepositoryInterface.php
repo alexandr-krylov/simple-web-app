@@ -2,7 +2,7 @@
 
 namespace Core\Repository;
 
-interface EmployeeRepository
+interface EmployeeRepositoryInterface
 {
     public function all();
 }
