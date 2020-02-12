@@ -8,4 +8,4 @@ RUN apt-get update
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - \
     && apt-get install -y nodejs
 RUN apt-get -y install git libzip-dev unzip \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip mysqli pdo_mysql

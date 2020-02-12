@@ -5,9 +5,15 @@ services:
         command: --default-authentication-plugin=mysql_native_password
         environment:
             MYSQL_ROOT_PASSWORD: "MySQLRootPassw0rd123"
+            MYSQL_USER: "simple_web_app_user"
+            MYSQL_PASSWORD: "simplewebapppass"
+            MYSQL_DATABASE: "simple_web_app"
         volumes:
             #path to database
             - ./mysqldb:/var/lib/mysql
+            #path to entrypoint
+            #- ./application:/code
+        #entrypoint: /code/mysqlentrypoint.sh
         networks:
             - webnet-dev
     php-fpm:
