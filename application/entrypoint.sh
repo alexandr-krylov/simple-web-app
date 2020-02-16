@@ -1,8 +1,10 @@
 #!/bin/sh
 
-cd /code
+cd /code/laravel
 #composer create-project laravel/laravel
-chmod -R 777 laravel/storage
+chmod -R 777 storage
+cp ../.env .env
+php artisan key:generate
 #cd laravel
 #composer require twbs/bootstrap:4.4.1
 #composer require laravel/ui --dev
