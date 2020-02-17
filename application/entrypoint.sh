@@ -4,9 +4,9 @@ cd /code/laravel
 #composer create-project laravel/laravel
 chmod -R 777 storage
 cp ../.env .env
+composer update
 php artisan key:generate
 composer dump-autoload
-composer update
 #cd laravel
 #composer require twbs/bootstrap:4.4.1
 #composer require laravel/ui --dev
