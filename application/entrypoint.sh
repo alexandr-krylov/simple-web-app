@@ -9,8 +9,8 @@ php artisan key:generate
 composer dump-autoload
 #cd laravel
 #composer require twbs/bootstrap:4.4.1
-#composer require laravel/ui --dev
-#php artisan ui bootstrap
+composer require laravel/ui --dev
+php artisan ui bootstrap
 #npm install
 #npm run dev
 #cd /code
