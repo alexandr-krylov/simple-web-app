@@ -7,20 +7,11 @@ cp ../.env .env
 composer update
 php artisan key:generate
 composer dump-autoload
-#cd laravel
-#composer require twbs/bootstrap:4.4.1
-composer require laravel/ui --dev
-php artisan ui bootstrap
+### install first time
+#composer require laravel/ui --dev
+#php artisan ui bootstrap
 #npm install
 #npm run dev
-#cd /code
-#cp core/routes/web.php laravel/routes/
-#mkdir -p laravel/resources/views/layouts
-#cp -R core/resources/views/* laravel/resources/views/
-#cp -R core/app/Http/Controllers/* laravel/app/Http/Controllers/
-#mkdir -p laravel/core
-#cp -R core/Entity laravel/core/
-#cp -R core/Service laravel/core/
-#cp -R core/Repository laravel/core/
+###
 
 php-fpm
