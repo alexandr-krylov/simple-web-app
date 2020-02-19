@@ -20,6 +20,12 @@ class GridController extends Controller
         //$this->employeeRepository = new EmployeeRepository();
         $employees = $this->employeeRepository->all();
         var_dump($this->employeeRepository);
-        return view('grid', ['employees' => $employees]);
+        return view(
+            'grid',
+            [
+                'employees' => $employees,
+                'message' => ['type' => 'info', 'content' => 'Hola, guacamolee!!!']
+            ]
+        );
     }
 }
