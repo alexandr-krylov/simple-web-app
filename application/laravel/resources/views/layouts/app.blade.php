@@ -36,13 +36,23 @@
             </div>
         </nav>
     <h1>@yield('h1')</h1>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    @if (isset($message))
+    <div class="alert
+    @switch ($message['type'])
+        @case('info') alert-info @break
+        @case('success') alert-success @break
+        @case('warning') alert-warning @break
+        @case('danger') alert-danger @break
+        @default alert-light
+    @endswitch
+        alert-dismissible fade show" role="alert">
         <strong>Holy guacamole!</strong>
          You should check in on some of those fields below.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    @endif
     <div class="container">
         @yield('content')
     </div>

@@ -24,7 +24,7 @@ class GridController extends Controller
             'grid',
             [
                 'employees' => $employees,
-                'message' => ['type' => 'info', 'content' => 'Hola, guacamolee!!!']
+                'message' => ['type' => 'success', 'content' => 'Hola, guacamolee!!!']
             ]
         );
     }
