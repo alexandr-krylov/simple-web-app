@@ -26,11 +26,11 @@
                             Grid<span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item {{$activeEmployee ?? ''}}">
-                        <a class="nav-link" href="\employee">Employee</a>
-                    </li>
                     <li class="nav-item {{$activeDepartment ?? ''}}">
                         <a class="nav-link" href="\department">Department</a>
+                    </li>
+                    <li class="nav-item {{$activeEmployee ?? ''}}">
+                        <a class="nav-link" href="\employee">Employee</a>
                     </li>
                 </ul>
             </div>

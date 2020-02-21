@@ -4,28 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Core\Repository\EmployeeRepositoryInterface;
-//use Core\Persistence\Laravel\EmployeeRepository;
 
 class GridController extends Controller
 {
-    private $employeeRepository;
+    private $repository;
 
     public function __construct(EmployeeRepositoryInterface $repository)
     {
-        $this->employeeRepository = $repository;
+        $this->repository = $repository;
     }
 
     public function show()
     {
-        //$this->employeeRepository = new EmployeeRepository();
-        $employees = $this->employeeRepository->all();
-        var_dump($this->employeeRepository);
-        return view(
-            'grid',
-            [
-                'employees' => $employees,
-                'message' => ['type' => 'success', 'content' => 'Hola, guacamolee!!!']
-            ]
-        );
+        $employees = $this->repository->all();
+        var_dump(empty($employees));
+        $data['employees'] = $employees;
+        if (empty($employees)) {
+            $data['message'] = ['type' => 'info', 'content' => 'Grid is empty'];
+        }
+        return view('grid', $data);
     }
 }
