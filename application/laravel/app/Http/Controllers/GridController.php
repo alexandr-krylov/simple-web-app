@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
 use Core\Repository\EmployeeRepositoryInterface;
 
 class GridController extends Controller
@@ -22,6 +22,7 @@ class GridController extends Controller
         if (empty($employees)) {
             $data['message'] = ['type' => 'info', 'content' => 'Grid is empty'];
         }
+        $data['activeGrid'] = 'active';
         return view('grid', $data);
     }
 }

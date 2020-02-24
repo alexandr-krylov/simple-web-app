@@ -15,6 +15,4 @@ Route::get('/', 'GridController@show');
 Route::get('/employee', function () {
     return view('employee', ['activeEmployee' => 'active']);
 });
-Route::get('/department', function () {
-    return view('department', ['activeDepartment' => 'active']);
-});
+Route::get('/department', 'DepartmentController@show');
