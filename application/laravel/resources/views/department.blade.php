@@ -6,9 +6,10 @@
 
 @section('content')
 <div class="d-flex justify-content-end">
-    <button type="button" class="btn btn-primary">
+    <a href="/department/edit" class="btn btn-primary">
         Add department
-    </button>
+    </a>
 </div>
     <p>This is my body content for department.</p>
 @endsection
+<script src="/js/department.js"></script>

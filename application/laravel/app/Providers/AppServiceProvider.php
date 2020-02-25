@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Core\Repository\EmployeeRepositoryInterface;
-use Core\Persistence\Laravel\EmployeeRepository;
+use Core\Repository\{EmployeeRepositoryInterface, DepartmentRepositoryInterface};
+use Core\Persistence\Laravel\{EmployeeRepository, DepartmentRepository};
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +19,12 @@ class AppServiceProvider extends ServiceProvider
             EmployeeRepositoryInterface::class,
             function ($app) {
                 return new EmployeeRepository();
+            }
+        );
+        $this->app->bind(
+            DepartmentRepositoryInterface::class,
+            function ($app) {
+                return new DepartmentRepository();
             }
         );
     }

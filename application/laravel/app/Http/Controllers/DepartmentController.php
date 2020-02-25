@@ -15,11 +15,24 @@ class DepartmentController extends Controller
 
     public function show()
     {
-        $departments = $repository->all();
+        $departments = $this->repository->all();
         if (empty($departments)) {
             $data['message'] = ['type' => 'info', 'content' => 'Departments is empty'];
         }
         $data['activeDepartment'] = 'active';
         return view('department', $data);
+    }
+
+    public function edit($id = null)
+    {
+        var_dump($_POST);
+        $data = [];
+        return view('departmentEdit', $data);
+    }
+
+    public function persist($id = null)
+    {
+        var_dump($_POST);
+        echo 'persist';
     }
 }
