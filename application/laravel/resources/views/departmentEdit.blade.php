@@ -14,7 +14,7 @@
         </label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="inputDepartment"
-                name="department" required>
+                name="name" required>
         </div>
     </div>
     <button type="submit" class="btn btn-primary mb-2">Save</button>

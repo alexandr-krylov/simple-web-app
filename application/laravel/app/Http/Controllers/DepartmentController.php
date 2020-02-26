@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Core\Repository\DepartmentRepositoryInterface;
+use Core\Service\DepartmentFactory;
 
 class DepartmentController extends Controller
 {
@@ -32,7 +33,14 @@ class DepartmentController extends Controller
 
     public function persist($id = null)
     {
-        var_dump($_POST);
+        var_dump($_POST, $id);
         echo 'persist';
+        $data = $_POST;
+        if (null !== $id) {
+            $data['id'] = $id;
+        }
+        $department = (new DepartmentFactory())->create($data);
+        $this->repository->persist($department);
+        //return redirect('department');
     }
 }
