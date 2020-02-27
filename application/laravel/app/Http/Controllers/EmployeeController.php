@@ -22,4 +22,10 @@ class EmployeeController extends Controller
         $data['activeEmployee'] = 'active';
         return view('employee', $data);
     }
+
+    public function edit($id = null)
+    {
+        $data = [];
+        return view('employeeEdit', $data);
+    }
 }
