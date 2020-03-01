@@ -14,11 +14,14 @@ implements EmployeeRepositoryInterface
     public function all()
     {
         $result = $this->dbh->query("select * from $this->table");
-        var_dump($result);
     }
 
     public function persist(AbstractEntity $employee)
     {
-        var_dump('persist employee');
+    }
+
+    public function  id($id)
+    {
+        
     }
 }

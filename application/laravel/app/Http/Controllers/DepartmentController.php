@@ -19,6 +19,8 @@ class DepartmentController extends Controller
         $departments = $this->repository->all();
         if (empty($departments)) {
             $data['message'] = ['type' => 'info', 'content' => 'Departments is empty'];
+        } else {
+            $data['rows'] = $departments;
         }
         $data['activeDepartment'] = 'active';
         return view('department', $data);
@@ -26,21 +28,23 @@ class DepartmentController extends Controller
 
     public function edit($id = null)
     {
-        var_dump($_POST);
         $data = [];
+        if (null !== $id) {
+            $department = $this->repository->id($id);
+            $data['id'] = $department->getId();
+            $data['name'] = $department->getName();
+        }
         return view('departmentEdit', $data);
     }
 
     public function persist($id = null)
     {
-        var_dump($_POST, $id);
-        echo 'persist';
         $data = $_POST;
         if (null !== $id) {
             $data['id'] = $id;
         }
         $department = (new DepartmentFactory())->create($data);
         $this->repository->persist($department);
-        //return redirect('department');
+        return redirect('department');
     }
 }

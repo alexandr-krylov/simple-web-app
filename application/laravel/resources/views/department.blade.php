@@ -10,6 +10,28 @@
         Add department
     </a>
 </div>
-    <p>This is my body content for department.</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach ($rows as $row)
+        <tr>
+            <td>
+                <a href="/department/edit/{{ $row->getId() }}">
+                    {{ $row->getName() }}
+                </a>
+            </td>
+            <td>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
 @endsection
 <script src="/js/department.js"></script>
