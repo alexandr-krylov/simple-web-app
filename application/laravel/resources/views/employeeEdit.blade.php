@@ -55,7 +55,7 @@
         </div>  
     </div>
     <div id="departments-checkboxes">
-    <h2>Departments</h2>
+    <h2><span class="text-danger">*</span>Departments</h2>
         @foreach ($departments as $department)
         <div class="form-check">
             <input class="form-check-input" type="checkbox"
