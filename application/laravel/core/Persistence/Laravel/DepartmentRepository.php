@@ -11,6 +11,7 @@ implements DepartmentRepositoryInterface
 {
 
     private $table = 'departments';
+    private $connectTable = '`employees-departments`';
     private $factory;
 
     public function __construct()
@@ -59,6 +60,25 @@ implements DepartmentRepositoryInterface
 
     public function delete($id)
     {
-        $count = $this->dbh->exec("DELETE $this->table WHERE id = $id");
+        $this->dbh->beginTransaction();
+        $dbErrors = [];
+        $countDepartments
+            = $this->dbh->exec("DELETE FROM $this->table WHERE id = $id");
+        if (false === $countDepartments) {
+            $dbErrors = array_merge($dbErrors, $this->dbh->errorInfo());
+        }    
+        $countConnect
+            = $this->dbh->exec(
+                "DELETE FROM $this->connectTable WHERE department_id = $id"
+            );
+        if (false === $countConnect) {
+            $dbErrors = array_merge($dbErrors, $this->dbh->errorInfo());
+        }
+        if (empty($dbErrors)) {
+            $this->dbh->commit();
+        } else {
+            $this->dbh->rollBack();
+            throw new \Exception(implode('; ', $dbErrors));
+        }
     }
 }

@@ -17,9 +17,10 @@ function(){
                     if (xhr.status === 200) {
                         var result = JSON.parse(xhr.responseText);
                         console.log(result);
-                        if (result.success) {
+                        if (result.success === true) {
                             var row = document.getElementById("row-" + departmentId);
-                            row.remove;
+                            console.log(row);
+                            row.remove();
                         }
                     } else {
                             alert("Error happend");

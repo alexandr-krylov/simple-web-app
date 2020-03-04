@@ -18,6 +18,7 @@ class DepartmentController extends Controller
     public function show()
     {
         $departments = $this->repository->all();
+        $data['rows'] = [];
         if (empty($departments)) {
             $data['message'] = ['type' => 'info', 'content' => 'Departments is empty'];
         } else {
