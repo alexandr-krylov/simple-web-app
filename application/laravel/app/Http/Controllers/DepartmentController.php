@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Core\Repository\DepartmentRepositoryInterface;
 use Core\Service\DepartmentFactory;
 
@@ -37,14 +38,25 @@ class DepartmentController extends Controller
         return view('departmentEdit', $data);
     }
 
-    public function persist($id = null)
+    public function persist(Request $request, $id = null)
     {
-        $data = $_POST;
+        $data = $request->all();
         if (null !== $id) {
             $data['id'] = $id;
         }
         $department = (new DepartmentFactory())->create($data);
         $this->repository->persist($department);
         return redirect('department');
+    }
+
+    public function delete(Request $request)
+    {
+        try {
+            $id = $request->input('id');
+            $this->repository->delete($id);
+            echo json_encode(['success' => true]);
+        } catch (Exception $e) {
+            echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+        }
     }
 }

@@ -56,4 +56,9 @@ implements DepartmentRepositoryInterface
             }
         }
     }
+
+    public function delete($id)
+    {
+        $count = $this->dbh->exec("DELETE $this->table WHERE id = $id");
+    }
 }

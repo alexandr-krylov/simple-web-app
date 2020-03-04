@@ -9,4 +9,5 @@ interface RepositoryInterface
     public function all();
     public function persist(AbstractEntity $entity);
     public function id($id);
+    public function delete($id);
 }

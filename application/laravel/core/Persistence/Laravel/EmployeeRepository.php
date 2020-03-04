@@ -20,8 +20,12 @@ implements EmployeeRepositoryInterface
     {
     }
 
-    public function  id($id)
+    public function id($id)
     {
         
+    }
+    public function delete($id)
+    {
+
     }
 }

@@ -18,7 +18,7 @@
     </thead>
     <tbody>
     @foreach ($rows as $row)
-        <tr>
+        <tr id="row-{{ $row->getId() }}">
             <td>
                 <a href="/department/edit/{{ $row->getId() }}">
                     {{ $row->getName() }}
