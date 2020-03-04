@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Department')
+@section('title', 'Department edit')
 
-@section('h1', 'department')
+@section('h1', 'department edit')
 
 @section('content')
 <form class="needs-validation" method="post">
@@ -21,4 +21,4 @@
 </form>
 
 @endsection
-<!----<script src="/js/departmentEdit.js"></script>---->
+<!--<script src="/js/departmentEdit.js"></script>--->

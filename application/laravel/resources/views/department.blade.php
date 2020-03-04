@@ -26,7 +26,9 @@
             </td>
             <td>
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-danger"
+                     data-purpose="delete-department"
+                     data-department-id="{{ $row->getId() }}">Delete</button>
                 </div>
             </td>
         </tr>
@@ -34,4 +36,6 @@
     </tbody>
 </table>
 @endsection
+@section('script')
 <script src="/js/department.js"></script>
+@endsection

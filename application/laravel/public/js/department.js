@@ -1,9 +1,15 @@
 (
 function(){
     console.log('department');
-    var button = document.getElementById("add-department");
-    button.onclick = function(){
-        
-    }
+    var deleteButtons
+        = document.querySelectorAll('[data-purpose="delete-department"]');
+    console.log(deleteButtons);
+    deleteButtons.forEach(function(button){
+        button.onclick = function(){
+            var xhr = new XMLHttpRequest();
+            
+        };
+        console.log(button);
+    });
 }
 )();
