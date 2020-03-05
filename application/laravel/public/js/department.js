@@ -1,9 +1,7 @@
 (
 function(){
-    console.log('department');
     var deleteButtons
         = document.querySelectorAll('[data-purpose="delete-department"]');
-    console.log(deleteButtons);
     deleteButtons.forEach(function(button){
         var departmentId = button.getAttribute('data-department-id');
         button.onclick = function(){
@@ -16,10 +14,8 @@ function(){
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         var result = JSON.parse(xhr.responseText);
-                        console.log(result);
                         if (result.success === true) {
                             var row = document.getElementById("row-" + departmentId);
-                            console.log(row);
                             row.remove();
                         }
                     } else {
@@ -33,7 +29,6 @@ function(){
                 document.querySelector('meta[name="_token"]')
                 .getAttribute('content'));
         };
-        console.log(button);
     });
 }
 )();

@@ -14,6 +14,7 @@
 Route::get('/', 'GridController@show');
 Route::get('/employee', 'EmployeeController@show');
 Route::get('/employee/edit/{id?}', 'EmployeeController@edit');
+Route::post('/employee/edit/{id?}','EmployeeController@persist');
 Route::get('/department', 'DepartmentController@show');
 Route::get('/department/edit/{id?}', 'DepartmentController@edit');
 Route::post('/department/edit/{id?}', 'DepartmentController@persist');
