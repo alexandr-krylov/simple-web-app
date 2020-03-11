@@ -1,11 +1,11 @@
 (
 function(){
-    var deleteButtons
+    let deleteButtons
         = document.querySelectorAll('[data-purpose="delete-department"]');
     deleteButtons.forEach(function(button){
-        var departmentId = button.getAttribute('data-department-id');
+        let departmentId = button.getAttribute('data-department-id');
         button.onclick = function(){
-            var xhr = new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
             xhr.open('delete', '/department/delete');
             xhr.setRequestHeader(
                 'Content-Type', 'application/x-www-form-urlencoded'
@@ -13,9 +13,9 @@ function(){
             xhr.onreadystatechange = function(){
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
-                        var result = JSON.parse(xhr.responseText);
+                        let result = JSON.parse(xhr.responseText);
                         if (result.success === true) {
-                            var row = document.getElementById("row-" + departmentId);
+                            let row = document.getElementById("row-" + departmentId);
                             row.remove();
                         }
                     } else {

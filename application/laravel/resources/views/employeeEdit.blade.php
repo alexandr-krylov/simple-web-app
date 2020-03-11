@@ -59,14 +59,22 @@
         @foreach ($departments as $department)
         <div class="form-check">
             <input class="form-check-input" type="checkbox"
-             name="department-{{ $department->getId() }}">
+             name="department-id-{{ $department->getId() }}"
+             data-control="department-check">
             <label class="form-check-label">
-                {{$department->getName()}}
+                <input type="text"
+                    name="department-name-{{ $department->getId() }}"
+                    value="{{$department->getName()}}" readonly>
             </label>
         </div>
         @endforeach
     </div>
-    <button type="submit" class="btn btn-primary mb-2">Save</button>
+    <button type="submit" class="btn btn-primary mb-2" id="submit-button">
+        Save
+    </button>
 </form>
 
+@endsection
+@section('script')
+<script src="/js/employeeEdit.js"></script>
 @endsection
