@@ -76,4 +76,10 @@ class Employee extends AbstractEntity
         $this->departments = $departments;
         return $this;
     }
+
+    public function addDepartment(Department $department)
+    {
+        $this->departments[] = $department;
+        return $this;
+    }
 }

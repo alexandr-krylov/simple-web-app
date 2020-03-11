@@ -6,6 +6,8 @@ use Core\Repository\{
     EmployeeRepositoryInterface,
     DepartmentRepositoryInterface
 };
+use Illuminate\Http\Request;
+use Core\Service\EmployeeFactory;
 
 class EmployeeController extends Controller
 {
@@ -58,6 +60,6 @@ class EmployeeController extends Controller
         }
         $employee = (new EmployeeFactory())->create($data);
         $this->repository->persist($employee);
-        return redirect('department');
+        return redirect('employee');
     }
 }

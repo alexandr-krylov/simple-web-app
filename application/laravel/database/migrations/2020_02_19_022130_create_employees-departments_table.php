@@ -17,7 +17,7 @@ class CreateEmployeesDepartmentsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('employee_id');
             $table->unsignedBigInteger('department_id');
-            $table->index(['employee_id', 'department_id']);
+            $table->unique(['employee_id', 'department_id']);
             $table->foreign('employee_id')->references('id')->on('employees');
             $table->foreign('department_id')->references('id')->on('departments');
             $table->timestamps();
